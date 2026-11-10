@@ -8,7 +8,8 @@
     {
       "@id": "https://repolex.ai/r/golang/protobuf/commit/1e63d3449048d4fb4c71c2f074ba5a9fad8443c9",
       "git:hexsha": "1e63d3449048d4fb4c71c2f074ba5a9fad8443c9",
-      "repolex:parseStatus": "ast_complete"
+      "repolex:parseStatus": "parsed",
+      "repolex:parsedAt": "2026-11-10T07:01:35.712141+00:00"
     },
     {
       "@id": "https://repolex.ai/r/golang/protobuf/commit/925541529c1fa6821df4e44ce2723319eb2be768",
