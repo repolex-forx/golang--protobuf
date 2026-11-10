@@ -1,0 +1,11 @@
+{
+  "org": "golang",
+  "repo": "protobuf",
+  "versions": [
+    {
+      "commit": "1e63d3449048d4fb4c71c2f074ba5a9fad8443c9",
+      "tag": "",
+      "parsed_at": "2026-11-10T07:01:35.712688+00:00"
+    }
+  ]
+}

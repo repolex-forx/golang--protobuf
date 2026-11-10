@@ -1,1 +1,149 @@
-Initializing
+# Repolex Knowledge Graph of golang/protobuf
+
+RDF knowledge graph data for [golang/protobuf](https://github.com/golang/protobuf), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download golang/protobuf
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 1e63d3449048d4fb4c71c2f074ba5a9fad8443c9
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 1e63d3449048d4fb4c71c2f074ba5a9fad8443c9
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 04561b858c7605a960b07b6414906723f2093abb.nq.gz
+│   ├── 066b4323b4995c640feaa8a87fa50a72b42124eb.nq.gz
+│   ├── 07efdfd8266a7f29337745e17dcf6cf18de01bcc.nq.gz
+│   ├── 097cc5975d42c9f1cd56e90ca7502844b06af3c7.nq.gz
+│   ├── 0aa2d9d073c3b29224259c8e5c6b1ab589b77711.nq.gz
+│   ├── 0ef27d33deb9b04ed6cd5b8fd7bd2018150f90bd.nq.gz
+│   ├── 0f646931a4627fbe7c4259f3fb0337d04d798d8e.nq.gz
+│   ├── 11b67d9f783ec329e481b81bc3b861375cef25a1.nq.gz
+│   ├── 15167cd746c560e5b3d3b233a169aa64d3e9101e.nq.gz
+│   ├── 16686a65523b1111cd14c9a28a567d727563784f.nq.gz
+│   ├── 1c4577e9680611383f46044d17fa343a96997c3c.nq.gz
+│   ├── 1dc0f8a03b36f85958c4e839781f0834e7c46350.nq.gz
+│   ├── 2187e877fa4a32adaa63a387fed5d4d5ba3d00cb.nq.gz
+│   ├── 28083979ca5a6057da9a6c7c0acae80b4c450ff8.nq.gz
+│   ├── 2e4233f200767402981fd9c8d47b0279e45e20f3.nq.gz
+│   ├── 39427734ec290adcd21c52a66fa1660d69e7104a.nq.gz
+│   ├── 398e348599bd33179a11f5a5d7694095353bbe6e.nq.gz
+│   ├── 3b9fe04e248b0985fb32aba34e5c7aa1d3a4cd96.nq.gz
+│   ├── 3f6edc5a6f93afdd2b00da15e378eb3ae6bbc16a.nq.gz
+│   ├── 40cba163b5de5dfc355e6ae9af3a7ff19f56a1bb.nq.gz
+│   ├── 42fc120c972b8399411cf9e5e3bc73644d166525.nq.gz
+│   ├── 441ef57cb45ac378caa75a7e2e91d7007a9c88aa.nq.gz
+│   ├── 47eb3e44501d6aa83188385684f5016ec7e4d351.nq.gz
+│   ├── 480e2448de661ad598f50c0232425287a8a617e6.nq.gz
+│   ├── 53b0251e92bb6fe0bdb2d9f8391ebd798c5f60b3.nq.gz
+│   ├── 5951041d1b09ffd00cade8a1a2fdfa4f626a3571.nq.gz
+│   ├── 59781594218d36c0a7925c865be379ee2063196d.nq.gz
+│   ├── 5aee89c323e0ad4b166ad6e409456c43c16862ea.nq.gz
+│   ├── 5c986d1c57ae03fc989a9c2626853338ae502452.nq.gz
+│   ├── 61c8f8a022a209f38141ec099e1378955db0269c.nq.gz
+│   ├── 6462e889c0dc420c687e001a994bc93628743a90.nq.gz
+│   ├── 6c16e6dc6361a3a9617c55cd997043972c89238e.nq.gz
+│   ├── 8368a3f70d383262c41321af736849234da34a83.nq.gz
+│   ├── 83971cbbfe221a54f58224d4be5fc13bdcc5174a.nq.gz
+│   ├── 89c4f783c8aaa1b3cd5a525434d0b786b3cc34db.nq.gz
+│   ├── 8d82abe21333d9bf870619caa1d3915f4a0735e4.nq.gz
+│   ├── a31134eeb3b7dc49285ea1215f6e643d72eccb5d.nq.gz
+│   ├── a5a138613ac20575b412d5fc9b7af1c9b8974789.nq.gz
+│   ├── a76f80760094b974777f2aa94c4787e06bc84573.nq.gz
+│   ├── acd24cf0c54f7b1225a1fa873c119eb817c01e62.nq.gz
+│   ├── b11827c2c69ba3dc802fb045b59980e45bab1a90.nq.gz
+│   ├── b1c6749d1f20ecab4e81919bdf9345fae7fb72dc.nq.gz
+│   ├── b2b55dd851f5d6de0a16ec7c3b43bbe2555cdb7c.nq.gz
+│   ├── c213adebdfd09bf185df7531889db84109d6e642.nq.gz
+│   ├── c2eb29703b584a6a9194078d3aedae2efcc1b50e.nq.gz
+│   ├── c6f66f10393d28df299086da373edf3ba8b1041e.nq.gz
+│   ├── c865e1ca5dcf9732203dfb46ef8776c18b54f53c.nq.gz
+│   ├── cb9a81411231336557348a4c8a222c34f0b84989.nq.gz
+│   ├── cc40f27ad306e3e655b2fe6b4e49e4370810a0d1.nq.gz
+│   ├── cd202f971fde7b7d4a07edfce7b263575ee9f180.nq.gz
+│   ├── d0079ee3ef37ee265345d6391ccbc72db9feb285.nq.gz
+│   ├── d399bf069c3dfe42082892a2744d4b730c441b23.nq.gz
+│   ├── d3c33259d28d95dc0772803c7a89c6133c63c72c.nq.gz
+│   ├── d5b2541a0ef24591268e76d9dc425619c1a28920.nq.gz
+│   ├── d7c28da5a7582d112760893e587cbbb33b2469dc.nq.gz
+│   ├── d9ae24f1b110a5feb1cb0e0c18540a8c9408ab6b.nq.gz
+│   ├── dbeb2b589c87b650960a5c19f290c9389a0ac6a7.nq.gz
+│   ├── dcdc2202fada8b87c063dbc721c83f44a728dea4.nq.gz
+│   ├── e688c8941d235d044e6629325f4e7c6f0642057e.nq.gz
+│   ├── e810e6fea129d47402785bf2850cc8505d51e4c9.nq.gz
+│   ├── e8db57e097a1a92dd5998e0724ee4ea40910c168.nq.gz
+│   ├── e9438a93f331c3b166a0282c84bdad43d31b9afe.nq.gz
+│   ├── ed6c5cccb197391cf4cda1af3060f2f588ffb438.nq.gz
+│   ├── f1679f1244f00621637c4d6cb73d04acd00485ed.nq.gz
+│   ├── f41c0ec486b95e81abde94949bca214b13802a0f.nq.gz
+│   ├── f6c35c5afd31df5db6ee6ded97a3c0431bb174b2.nq.gz
+│   ├── f850d9dec4a1da356a945a44bf0d8518c92bc24c.nq.gz
+│   ├── fd2f51d890119559598e607d4b6e69a75403a20b.nq.gz
+│   ├── fdff3fdb4cba38e7646967f4ff4f828601abd39a.nq.gz
+│   └── ffde8a65081e4f55f22ca37fbb3446c7f8424826.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 1e63d3449048d4fb4c71c2f074ba5a9fad8443c9.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 78 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[golang/protobuf](https://github.com/golang/protobuf)
+
+---
+*Parsed on 2026-11-10 by [repolex](https://repolex.ai)*
